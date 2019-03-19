@@ -1,0 +1,87 @@
+<div class="jumbotron">
+    <div ng-if="vm.codigo == 201" class="alert alert-success" role="alert">
+        {{vm.mensagem }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    <div ng-if="vm.codigo == 203" class="alert alert-danger" role="alert">
+      {{vm.mensagem}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div ng-if="vm.codigo == 200" class="alert alert-success" role="alert">
+        {{vm.mensagem}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+  <div class="card text-white bg-dark mb-3" >
+      <div class="card-header">{{vm.name}}</div>
+      <div class="card-body">
+          
+            <div class="">
+              <form name="cadastro">
+                <div class="form-group input-group ">
+                  <input type="text" maxlength="20" required ng-model="vm.mesa.nome" class="form-control" placeholder="Nome: no máximo 20 caracteres">
+                  <button ng-click="vm.salvar()" class="btn btn-success mb-2">Salvar</button>
+                </div>
+              </form>
+            </div>
+            <div ng-if="vm.name == 'Editar'">
+              <h5>Cadeiras <span class="badge badge-info">{{vm.mesa.cadeiras.length}}</span></h5>
+              <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat='cadeira in vm.mesa.cadeiras'>
+                    <td><b>{{$index+1}}</b></td>
+                    <td>{{cadeira.nome}}</td>
+                    <td><button ng-click="vm.removerCadeira(cadeira.idCadeira)"class="btn-danger btn btn-sm">Apagar</button></td>
+                  </tr>
+                </tbody>
+                
+              </table>
+              <div ng-if="vm.mesa.cadeiras.length == 0" class="alert alert-info" role="alert">
+                  Nenhuma cadeira cadastrada.
+              </div>
+              <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#adcionarCadeira">+</button>
+            </div> 
+      </div>
+      
+      
+    </div>
+    <button ui-sref="mesa" class="btn btn-primary mb-2">Voltar</button>
+</div>
+  <!-- Modal -->
+  <div class="modal fade" id="adcionarCadeira" tabindex="-1" role="dialog" aria-labelledby="adcionarCadeiraLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="adcionarCadeiraLabel">Adcionar Cadeira</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <input type="text" ng-model="vm.cadeira.nome" class="form-control" placeholder="Nome">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" ng-click="vm.adcionarCadeira()"  >Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+      angular.module('form', [])
+        .controller('FormController', ['$scope', function($scope) {
+
+        }])
+    </script>

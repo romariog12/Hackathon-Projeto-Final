@@ -1,0 +1,46 @@
+<div class="jumbotron">
+  <h1>Olá {{vm.name}}</h1>
+  <div ng-if="vm.codigo == 200" class="alert alert-success" role="alert">
+      {{vm.mensagem  }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+  </div>
+  <div>
+      
+      <div class="input-group mb-3 col-sm-6">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">Filtro</span>
+          </div>
+      <input type="text" ng-model="criteria" class="form-control">
+    </div>
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Mesa</th>
+          <th scope="col">Cadeiras</th>
+          <th scope="col">Ação</th>
+        </tr>
+      </thead>
+      <tbody >
+          <tr ng-repeat='mesa in vm.mesas | filter:criteria'>
+            <td><b>{{$index+1}}</b></td>
+            <td>{{mesa.nome}}</td>
+            <td>{{mesa.cadeiras.length}}</td>
+            <td><button ui-sref="editarMesa({id:mesa.idMesa})" class="btn-primary btn btn-sm">Editar</button>
+               <button ng-click="vm.apagar(mesa.idMesa)" class="btn-danger btn btn-sm">Apagar</button></td>
+        </tr>
+      </tbody>
+  
+    </table>
+    
+    <div ng-if="vm.mesas.length == 0" class="alert alert-info" role="alert">
+        Nenhuma mesa cadastrada.
+    </div>
+    <button class="btn btn-primary btn-sm" ui-sref="cadastrarMesa" >Cadastrar {{vm.name}}</button>
+    
+  </div>
+
+ 
+</div>
