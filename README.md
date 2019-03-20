@@ -1,7 +1,8 @@
 # Projeto Hackaton - Stefanini
 
 ### Autor
-Romário Macêdo Portela <romariomacedo18@gmail.com>
+Romário Macêdo Portela 
+<romariomacedo18@gmail.com>
 
 ### Professor
 [Wesley Martins](https://github.com/wmacibnc)
