@@ -1,7 +1,6 @@
 package com.stefanini.projeto.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,8 +8,9 @@ import org.springframework.stereotype.Service;
 import com.stefanini.projeto.exception.TreinaException;
 import com.stefanini.projeto.model.Cadeira;
 import com.stefanini.projeto.repository.CadeiraRepository;
-import com.stefanini.projeto.resposta.RespostaUtil;
 import com.stefanini.projeto.resposta.Resposta;
+import com.stefanini.projeto.resposta.RespostaEnum;
+import com.stefanini.projeto.resposta.RespostaUtil;
 
 
 /**
@@ -31,15 +31,15 @@ public class CadeiraService {
 
 	public Resposta save(Cadeira cadeira) throws TreinaException {
 		repository.save(cadeira);
-		return RespostaUtil.RESPOSTA_SUCESSO_CREATE;
+		return RespostaUtil.mensagem(RespostaEnum.SAVE);
 	}
 
 	public Resposta delete(Long id) throws TreinaException {
 		repository.deleteById(id);
-		return RespostaUtil.RESPOSTA_SUCESSO_DELETE;
+		return RespostaUtil.mensagem(RespostaEnum.DELETE);
 	}
 
-	public Optional<Cadeira> findById(Long id) throws TreinaException {
-		return repository.findById(id);
+	public Cadeira findById(Long id) throws TreinaException {
+		return repository.findById(id).get();
 	}
 }

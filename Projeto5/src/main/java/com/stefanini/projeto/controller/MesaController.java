@@ -44,7 +44,7 @@ public class MesaController{
 
 	@RequestMapping(path="/{id}",method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Mesa getMesa(@PathVariable("id") Long id) throws TreinaException  {
-		return service.findById(id).get();
+		return service.findById(id);
 	}
 
 

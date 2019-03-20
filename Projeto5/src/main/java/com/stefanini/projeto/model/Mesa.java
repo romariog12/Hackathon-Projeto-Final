@@ -13,6 +13,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 /**
  * 
  * @author Romário Macedo Portela<romariomacedo18@gmail.com>
@@ -33,6 +36,7 @@ public class Mesa implements Serializable{
 	@Column(name = "nome")
 	private String nome;
 	
+	@JsonProperty(access=Access.READ_ONLY)
 	@OneToMany(mappedBy = "mesa", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Cadeira> cadeiras;
 

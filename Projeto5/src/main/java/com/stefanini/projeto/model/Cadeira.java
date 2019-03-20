@@ -52,6 +52,13 @@ public class Cadeira implements Serializable {
 
 	}
 
+	public Cadeira(Long idCadeira, String nome, Mesa mesa) {
+		super();
+		this.idCadeira = idCadeira;
+		this.nome = nome;
+		this.mesa = mesa;
+	}
+
 	public Cadeira(String nome) {
 		super();
 		this.nome = nome;
