@@ -28,7 +28,7 @@ public class MesaService {
 	}
 
 	public Resposta save(Mesa mesa) throws TreinaException {
-		if (mesa.getCadeiras().size() < 5) {
+		if (mesa.getCadeiras().size() < 6) {
 			if (mesa.getIdMesa() != null) {
 				repository.save(mesa);
 				return RespostaUtil.RESPOSTA_SUCESSO_UPDATE;
