@@ -28,7 +28,7 @@ public class RespostaUtil {
 			return new Resposta(ERROR_CREATE_EXISTENTE, HttpStatus.NON_AUTHORITATIVE_INFORMATION.value());
 
 		}
-		throw new TreinaException("Erro Interno");
+		throw new TreinaException("Erro ao tentar processar sua solicitação");
 	}
 
 }

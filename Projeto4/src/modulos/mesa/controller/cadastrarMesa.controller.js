@@ -18,7 +18,6 @@ export default class CadastrarMesaController {
       } else {
         vm.mesa = { "idMesa": null, "nome": vm.nome, "cadeiras": [] };
       }
-
     }
     vm.salvar = function () {
       if (vm.nome == 'Editar') {
@@ -36,17 +35,17 @@ export default class CadastrarMesaController {
     }
     //Adcionar cadeira
     vm.adcionarCadeira = function () {
-      if(vm.mesa.cadeiras.length < 5){
+      if (vm.mesa.cadeiras.length < 5) {
         mesaService.adcionarCadeira(vm.cadeira).then(function (resp) {
           init()
           vm.codigo = resp.data.codigo;
           vm.mensagem = resp.data.mensagem;
-          
+
         })
-      }else{
+      } else {
         alert("Limite de cadeiras excedida")
       }
-    
+
     }
     vm.removerCadeira = function (id) {
       let c = confirm("Tem certeza que deseja excluir?")
@@ -56,7 +55,7 @@ export default class CadastrarMesaController {
           init()
           vm.codigo = resp.data.codigo;
           vm.mensagem = resp.data.mensagem;
-          
+
         })
       }
       else
@@ -66,4 +65,3 @@ export default class CadastrarMesaController {
 }
 
 CadastrarMesaController.$inject = ['mesaService', '$stateParams', '$location'];
-
