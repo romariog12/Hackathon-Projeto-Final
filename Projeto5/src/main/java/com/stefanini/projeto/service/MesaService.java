@@ -44,7 +44,6 @@ public class MesaService {
 		} else {
 			return RespostaUtil.mensagem(RespostaEnum.CADASTRO_EXISTENTE);
 		}
-
 	}
 
 	public Resposta remove(Long id) throws TreinaException {

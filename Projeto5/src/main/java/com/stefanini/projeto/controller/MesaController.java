@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.stefanini.projeto.exception.TreinaException;
@@ -38,29 +37,29 @@ public class MesaController{
 	private MesaService service;
 
 	@RequestMapping(method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody List<Mesa> findAll() throws TreinaException  {
-		return service.findAll();
+	public ResponseEntity<List<Mesa>> findAll() throws TreinaException  {
+		return new ResponseEntity<>(service.findAll(),HttpStatus.OK);
 	}
 
 	@RequestMapping(path="/{id}",method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody Mesa getMesa(@PathVariable("id") Long id) throws TreinaException  {
-		return service.findById(id);
+	public ResponseEntity<Mesa> getMesa(@PathVariable("id") Long id) throws TreinaException  {
+		return new ResponseEntity<>(service.findById(id),HttpStatus.OK); 
 	}
 
 
 	@RequestMapping(method=RequestMethod.POST, produces=MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody ResponseEntity<Resposta> salvar(@RequestBody Mesa mesa) throws TreinaException  {
-		return ResponseEntity.ok(service.save(mesa));
+	public ResponseEntity<Resposta> salvar(@RequestBody Mesa mesa) throws TreinaException  {
+		return new ResponseEntity<>(service.save(mesa),HttpStatus.CREATED);
 	}
 
 	@RequestMapping(path="/{id}",method=RequestMethod.DELETE, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Resposta> remover(@PathVariable Long id) throws TreinaException {
-		return  ResponseEntity.ok(service.remove(id));
+		return new ResponseEntity<>(service.remove(id),HttpStatus.OK);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Resposta> editar(@RequestBody Mesa mesa) throws TreinaException {
-		return ResponseEntity.ok(service.save(mesa));
+		return new ResponseEntity<>(service.save(mesa),HttpStatus.CREATED);
 	}
 	
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
