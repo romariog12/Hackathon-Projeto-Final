@@ -22,8 +22,8 @@
 	</parent>
 
 	<modules>
-		<module>projeto4</module>
-		<module>projeto5</module>
+		<module>Projeto4</module>
+		<module>Projeto5</module>
 	</modules>
 	<build>
 		<finalName>${project.artifactId}</finalName>
