@@ -1,5 +1,5 @@
 # Projeto Hackaton - Stefanini
-
+[![Build Status](https://travis-ci.org/romariog12/Hackathon-Projeto-Final.svg?branch=master)](https://travis-ci.org/romariog12/Hackathon-Projeto-Final)
 ### Ator
 Romário Macêdo Portela 
 - <romariomacedo18@gmail.com>
