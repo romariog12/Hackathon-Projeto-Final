@@ -1,11 +1,11 @@
 # Projeto Hackaton - Stefanini
 
-### Autor
+### Ator
 Romário Macêdo Portela 
-<romariomacedo18@gmail.com>
+- <romariomacedo18@gmail.com>
 
 ### Professor
-[Wesley Martins](https://github.com/wmacibnc)
+- [Wesley Martins](https://github.com/wmacibnc)
 
 ### Agradecimentos
 Acima de tudo a Deus, pois devo minha vida à sua grande misericórdia.
@@ -14,30 +14,30 @@ E sem esquecer do grande professor e sua forma espontanea e agradável de ensino
 
 
 # Informações do projeto
--Projeto referente ao treinamento Hackathon Java da Stefanini
+- Projeto referente ao treinamento Hackathon Java da Stefanini
 
 ### Desafio proposto
-[Dontpad](http://dontpad.com/hackaton2019)
+- [Dontpad](http://dontpad.com/hackaton2019)
 
 ### Referência
--[Projeto Base](https://github.com/wmacibnc/hackaton)
+- [Projeto Base](https://github.com/wmacibnc/hackaton)
 
 ### Tecnologias
--Spring Boot fremawork
--AngularJS
+- Spring Boot fremawork
+- AngularJS
 
 ### Banco de Dados
--MySql
+- MySql
 ### Linguagens de programação
--Java
--JavaScript
+- Java
+- JavaScript
 
 ### Numero do tema
--18
+- 18
 
 # Informações adcionais
 ### TDD
--Spring Testing
+- Spring Testing
 
 
 
